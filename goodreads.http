@@ -1,0 +1,85 @@
+GET http://localhost:3000/books/
+Authorization: Bearer JWT_TOKEN
+
+###
+
+GET http://localhost:3000/books/1/
+
+###
+
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{    
+    "username": "rahul123",
+    "password": "rahul@456",
+    "gender":"male",
+    "location":"hyderabad"
+}
+
+###
+
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{    
+    "username": "rahul123",
+    "password": "rahul@456"
+}
+
+###
+PUT http://localhost:3000/profile/
+Authorization: Bearer JWT_TOKEN
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "gender": "Male",
+  "location": "New York"
+}
+
+
+###
+POST http://localhost:3000/books/
+Authorization: Bearer JWT_TOKEN
+Content-Type: application/json
+
+{
+  "title": "Book Title",
+  "authorId": 1,
+  "rating": 4.5,
+  "ratingCount": 100,
+  "reviewCount": 50,
+  "description": "Book description",
+  "pages": 200,
+  "dateOfPublication": "2023-05-12",
+  "editionLanguage": "English",
+  "price": 29.99,
+  "onlineStores": "Amazon, Barnes & Noble"
+}
+
+###
+PUT http://localhost:3000/books/1
+Authorization: Bearer JWT_TOKEN
+Content-Type: application/json
+
+{
+  "title": "Updated Book Title",
+  "authorId": 2,
+  "rating": 4.8,
+  "ratingCount": 150,
+  "reviewCount": 70,
+  "description": "Updated book description",
+  "pages": 250,
+  "dateOfPublication": "2023-05-12",
+  "editionLanguage": "English",
+  "price": 39.99,
+  "onlineStores": "Amazon, Barnes & Noble"
+}
+###
+DELETE http://localhost:3000/books/1
+Authorization: Bearer JWT_TOKEN
+
+###
+GET http://localhost:3000/authors/1/books
+Authorization: Bearer JWT_TOKEN
